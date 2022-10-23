@@ -13,23 +13,25 @@ interface IInputProps {
 const Input: FC<IInputProps> = ({
   type,
   placeholder,
-  label,
   className,
+  label,
   defaultValue,
   spellCheck = false,
   onChange,
 }): JSX.Element => (
-  <div>
-    {label && <label className="block text-sm text-gray-400">{label}</label>}
+  <label htmlFor={label} className={`block overflow-hidden`}>
+    <span className="text-xs font-medium text-white">{label}</span>
+
     <input
+      id={label}
       type={type}
       placeholder={placeholder}
       defaultValue={defaultValue}
       spellCheck={spellCheck}
-      className={`px-2 py-1 text-sm w-34 border border-gray-200 rounded-md focus:border-gray-400 duration-300 outline-none ${className}`}
+      className={`w-full border-none p-0 focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm ${className}`}
       onChange={(event: React.ChangeEvent<HTMLInputElement>) => onChange(event)}
     />
-  </div>
+  </label>
 );
 
 export default Input;

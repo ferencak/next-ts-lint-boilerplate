@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
@@ -14,10 +15,12 @@ const useApi = ({ api, options }: IUseApiProps) => {
     setIsLoading(true);
     const { url, method, headers, data } = api;
     try {
-      const res = await axios({
+      const res: any = await axios({
         url: `${config.restApi}${url}`,
-        method,
-        headers,
+        method: method,
+        headers: {
+          ...(headers as any),
+        },
         data: callData || data,
       });
       setResponse(res);

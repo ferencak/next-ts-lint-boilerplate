@@ -1,12 +1,18 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 
 import ErrorBoundary from 'components/hoc/ErrorBoundary';
 
 import { ILoadingContainerProps } from 'interfaces/ILoadingContainerProps';
 
+/**
+ * LoadingContainer component
+ *
+ * @param {ILoadingContainerProps} { loading, error, children }
+ * @returns JSX.Element
+ */
 const LoadingContainer: FC<ILoadingContainerProps> = ({ isLoading, error, children }): JSX.Element => (
   <ErrorBoundary error={error}>
-    <>
+    <Fragment>
       {isLoading && (
         <div className="absolute w-full h-full inline-flex backdrop-blur-md bg-transparent items-center justify-center z-50">
           <div className="flex flex-col items-center justify-center">
@@ -32,7 +38,7 @@ const LoadingContainer: FC<ILoadingContainerProps> = ({ isLoading, error, childr
         </div>
       )}
       {children}
-    </>
+    </Fragment>
   </ErrorBoundary>
 );
 
