@@ -1,12 +1,8 @@
-import { IUser, IUserAuthorization } from './IUser';
-
 export interface IApplication {
   name: string;
 }
 
 export interface IGlobalStore {
-  user: IUser;
-  authorization: IUserAuthorization;
   application: IApplication;
 }
 

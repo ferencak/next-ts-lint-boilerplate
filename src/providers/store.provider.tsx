@@ -4,22 +4,6 @@ import { IGlobalStore, IStore, IStoreProviderProps } from 'interfaces/IStore';
 
 export const StoreDefaultValues: IStore = {
   store: {
-    user: {
-      id: '',
-      username: '',
-      email: '',
-      acceptPrivacyPolicy: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-      isMember: false,
-      memberSince: new Date(),
-      role: '',
-    },
-    authorization: {
-      accessToken: '',
-      refreshToken: '',
-      isAuthorized: false,
-    },
     application: {
       name: 'NextJS Starter',
     },

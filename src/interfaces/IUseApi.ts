@@ -1,17 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface IApiProps {
-  url: string;
-  method: 'GET' | 'POST' | 'PUT' | 'DELETE';
-  data?: unknown;
-  headers?: unknown;
+  url: string
+  method: 'GET' | 'POST' | 'PUT' | 'DELETE'
+  data?: any
+  headers?: any
 }
 export interface IUseApiProps {
-  api: IApiProps;
+  api: IApiProps
   options: {
-    onSuccess?: (res: any) => void;
-    onError?: (res: any) => void;
-    autoFetch?: boolean;
-    mock?: boolean;
-    withToken?: boolean;
-  };
+    onSuccess?: Function
+    onError?: Function
+    autoFetch?: boolean
+    mock?: boolean
+    withToken?: boolean
+  }
 }

@@ -1,7 +1,7 @@
-import { IError } from './IError';
+import { IError } from './IError'
 
 export interface ILoadingContainerProps {
-  isLoading: boolean;
-  error: IError;
-  children: JSX.Element;
+  isLoading: boolean
+  error: IError
+  children: JSX.Element
 }
